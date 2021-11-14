@@ -67,9 +67,9 @@ class Doll {
 
   async start() {
     this.lookBackward();
-    await delay(Math.random() * 1000 + 1000);
+    await delay(Math.random() * 1000);
     this.lookForward();
-    await delay(Math.random() * 750 + 750);
+    await delay(Math.random() * 750);
     this.start();
   }
 }
@@ -188,5 +188,11 @@ window.addEventListener("keydown", (e) => {
 window.addEventListener("keyup", (e) => {
   if (e.key == "ArrowUp") {
     player.stop();
+  }
+});
+
+window.addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    location.reload();
   }
 });
